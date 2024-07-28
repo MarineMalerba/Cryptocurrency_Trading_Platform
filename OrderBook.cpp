@@ -102,20 +102,16 @@ void OrderBook::insertOrder(OrderBookEntry& order)
 
 std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp)
 {
-// asks = orderbook.asks
     std::vector<OrderBookEntry> asks = getOrders(OrderBookType::ask, 
                                                  product, 
                                                  timestamp);
-// bids = orderbook.bids
     std::vector<OrderBookEntry> bids = getOrders(OrderBookType::bid, 
                                                  product, 
                                                     timestamp);
 
-    // sales = []
     std::vector<OrderBookEntry> sales; 
 
-    // I put in a little check to ensure we have bids and asks
-    // to process.
+    // Ensure we have bids and asks to process.
     if (asks.size() == 0 || bids.size() == 0)
     {
         std::cout << " OrderBook::matchAsksToBids no bids or asks" << std::endl;
