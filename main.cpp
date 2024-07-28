@@ -8,7 +8,3 @@ int main()
     app.init();
     
 }
-
-// cd /Users/marinemalerba/Documents/PROGRAMMATION/C++/src
-// g++ -std=c++11 *.cpp
-// ./a.out
